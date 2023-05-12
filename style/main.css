@@ -1,0 +1,38 @@
+
+@font-face {
+  font-family: 'S';
+  src: url(./font/SPACERR-Regular.ttf);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  height: 100vh;
+  background: #f9f9f9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  width: 80%;
+  height: 80%;
+  background: #acacac;
+  border-radius: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+p {
+  font-size: 5rem;
+  text-align: center;
+  font-family: 'S';
+  color: white; 
+  line-height: 0;
+  text-transform: uppercase;
+}

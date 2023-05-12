@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Title -->
+    <title>3D & Split Text Animation</title> 
+
+    <script src="./node_modules/split-text-js/SplitTextJS.js"></script>
+    <script src="./node_modules/gsap/dist/gsap.min.js"></script> 
+
+    <!-- Main css -->
+    <link rel="stylesheet" href="./style/main.css">
+
+</head>
+<body>
+    <div class="container">
+        <div class="text-wrapper">
+            <p>frontend</p>
+            <p>backend</p> 
+            <p>react</p> 
+            <p>3d/ui/ux</p>
+            <p>tech-boy</p>
+        </div>
+    </div>  
+
+    <!-- Scripts -->
+    <script>
+        const titles = gsap.utils.toArray('p')
+        const tl = gsap.timeline();
+
+        titles.forEach(title => {
+            const splitTitle = new SplitTextJS(title);
+            
+            tl .from(splitTitle.chars, {
+                opacity: 0,
+                y: 80,
+                rotateX: -90,
+                stagger: .02
+            }, '<')
+            
+            tl.to(splitTitle.chars, {
+                opacity: 0,
+                y: -80,
+                rotateX: 90,
+                stagger: .02
+            }, '<1')
+
+            .repeat(-1);
+        });
+    </script>
+</body>
+</html> 
